@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Quickdraw-Web</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Analog_Clock.css">
+    <link rel="stylesheet" href="assets/css/Clock-Real-Time-1.css">
+    <link rel="stylesheet" href="assets/css/Clock-Real-Time.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container"><a class="navbar-brand" href="index.html">WebTrigger</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Snapsheet</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Quickdraw</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Report Generator</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Other Tools&nbsp;</a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav><div class="container-sm">
+      <h1 class="pt-4 pb-4">Quickdraw-Web</h1>
+      <form onsubmit="return false">
+        <div class="custom-file mb-3">
+          <input id="sheet" type="file" accept=".xlsx" class="custom-file-input form-control-lg">
+          <label for="sheet" class="custom-file-label regulated-file-label-length">Select a sheet</label>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Number of targets</span>
+          </div>
+          <div class="regulated-input-length">
+            <input id="targAmount" type="number" class="form-control">
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Minimum switch length</span>
+          </div>
+          <div class="regulated-input-length">
+            <input id="minSwitch" type="number" class="form-control">
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Optimum switch length</span>
+          </div>
+          <div class="regulated-input-length">
+            <input id="optimSwitch" type="number" class="form-control">
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Minimum trigger length</span>
+          </div>
+          <div class="regulated-input-length">
+            <input id="minTrigger" type="number" class="form-control">
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Optimum trigger length</span>
+          </div>
+          <div class="regulated-input-length">
+            <input id="optimTrigger" type="number" class="form-control">
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Maximum trigger length</span>
+          </div>
+          <div class="regulated-input-length">
+            <input id="maxTrigger" type="number" class="form-control">
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Endorsements on point</span>
+          </div>
+          <div class="regulated-input-length">
+            <input id="endos" type="number" class="form-control">
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Ignore embassies</span>
+          </div>
+          <input id="embassies" type="text" class="form-control" placeholder="Ignore regions that have embassies with these regions">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Ignore phrases</span>
+          </div>
+          <input id="wfeFilter" type="text" class="form-control" placeholder="Ignore regions that have these phrases in the WFE">
+        </div>
+        <select name="update" id="update" class="custom-select mb-3 regulated-select-length">
+          <option selected="">Choose update</option>
+          <option value="Major">Major</option>
+          <option value="Minor">Minor</option>
+        </select>
+        <div class="custom-control custom-switch mb-3">
+          <input type="checkbox" class="custom-control-input" id="defaultEmbassies">
+          <label class="custom-control-label" for="defaultEmbassies">Use default embassy filters <i data-toggle="tooltip" data-placement="right" title="Filters out embassies usually found on raided regions"><i class="far fa-question-circle"></i></i></label>
+        </div>
+        <div class="custom-control custom-switch mb-3">
+          <input type="checkbox" class="custom-control-input" id="defaultWfeFilter">
+          <label class="custom-control-label" for="defaultWfeFilter">Use default WFE filters <i data-toggle="tooltip" data-placement="right" title="Filters out phrases common in raided regions wfe's"><i class="far fa-question-circle"></i></i></label>
+        </div>
+      </form>
+      <div class="btn-group">
+        <button type="submit" id="start" class="btn btn-primary"><i class="fas fa-crosshairs"></i> Find targets</button>
+      </div>
+      <div class="btn-group">
+        <button type="reset" id="reset" class="btn btn-danger"><i class="fas fa-trash"></i> Clear fields</button>
+      </div>
+    </div>
+    <div class="mb-4">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Analog_Clock.js"></script>
+    <script src="assets/js/Clock-Real-Time.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
