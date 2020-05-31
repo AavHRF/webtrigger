@@ -132,35 +132,15 @@ function mainProgram() {
     //Main; Generates raidFile and trigger_list
     alert("If a target has not been tagged, press the 'Cancel' button\n\nIf a target is already tagged, press the 'OK' button");
     for (let i = 0; i < targetArray.length; i++) {
+      //Get our current target and trigger for our current target
       const currentTarget = targetArray[i];
-      const nextTargArray = findNextSwitch(i, currentTarget.updateTime);
-      if (nextTargArray === 9 || targNumber > targAmount) {
-        downloadData("raidFile.txt", raidFileData);
-        downloadData("trigger_list.txt", triggerListData);
-        return 0;
-      }
-      let hasFoundTarg = 0;
-      let prospectTargPos;
-      let currentTrigger;
-      let prospect;
+      const currentTrigger = findTriggers(currentTarget.regionNumber, currentTarget.updateTime);
 
-      //Go through the switchArray generated for the currentTarget, and check if any of them have triggers
-      //If they don't, use the only switchArray item
-      currentTrigger = findTriggers(targetArray[i].regionNumber, targetArray[i].updateTime);
-      for (let i = 0; i < nextTargArray.length; i++) {
-        prospect = findInTargets(nextTargArray[i].name);
-        prospectTargPos = targetArray[prospect].regionNumber;
-
-        //Exit the loop if we have found a trigger
-        if (currentTrigger !== undefined) {
-          hasFoundTarg = 1;
-          break;
-        }
-      }
-
-      //Sets the hasFoundTarg flag after finding a target
-      if (hasFoundTarg) {
+      //DON'T EXECUTE IF NO TRIGGERS ARE FOUND FOR THE CURRENT TARGET
+      //If no triggers are found, just move onto the next target
+      if (currentTrigger !== undefined) {
         //Open the prospect target in browser and ask the user whether or not it's been tagged already
+        //Also move onto the next target if the region has already been tagged
         window.open(`https://www.nationstates.net/region=${targetArray[i].name.slice(0, -1)}`, "_blank");
         if (!confirm(`${targNumber}. Has ${targetArray[i].name.slice(0, -1)} already been tagged?`)) {
           //Execute if the response "n" is given
@@ -180,7 +160,38 @@ function mainProgram() {
             raidFileData += `    a) https://www.nationstates.net/template-overall=none/region=${triggerName.replace(/ /g, "_").toLowerCase()} (${timeDifference(readCell(`E${currentTargPos}`), readCell(`E${findInSpyglass(currentTrigger.name)}`))}s)\n\n`;
             triggerListData += `${triggerName}\n`;
           }
-          i = prospect - 1; //Push the targetArray iterator up to the switched region
+
+          //Grab a list of good switches and declare relevant variables
+          const nextTargList = findNextSwitch(i, currentTarget.updateTime);
+          let prospect;
+          let hasFoundTarg = false;
+
+          //The findNextSwitch function returns "9" on Spyglass EOF
+          //If we run out of update or if we have set all of our targets, download the raid file and trigger_list
+          if (nextTargList === 9 || targNumber > targAmount) {
+            downloadData("raidFile.txt", raidFileData);
+            downloadData("trigger_list.txt", triggerListData);
+            return 0;
+          }
+
+          //Go through our list of good switches and find the one closest to the optimum switch length
+          for (let i = 0; i < nextTargList.length; i++) {
+            const switchInTargets = targetArray[findInTargets(nextTargList[i].name)]; //Finds the candidate region's position in the targetArray
+
+            //If we can find a trigger for the current region, go back through the loop with the new region as our current target
+            if (findTriggers(switchInTargets.regionNumber, switchInTargets.updateTime) !== undefined) {
+              prospect = findInTargets(nextTargList[i].name);
+              break;
+            }
+          }
+
+          //If we can't find a trigger any good switches, just go to the highest scored switch (also the latest switch)
+          //When the loop goes through it's next iteration, it will see that there are no triggers, and start trying to find other switches
+          if (!hasFoundTarg) {
+            prospect = findInTargets(nextTargList[0].name);
+          }
+
+          i = prospect - 1;
         }
       }
     }
