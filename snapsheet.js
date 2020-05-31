@@ -198,8 +198,8 @@ function mainProgram() {
           regionString = `${currentRegion}~`;
         }
         if ((UnfoundedList.indexOf(currentRegion) !== -1) && (PWlessList.indexOf(currentRegion) !== -1)) {
-          workbook.sheet(0).cell(`A${i + 2}`).style("fill", "008000");
-          workbook.sheet(0).cell(`B${i + 2}`).style("fill", "008000");
+          workbook.sheet(0).cell(`A${i + 2}`).style("fill", "01ff00");
+          workbook.sheet(0).cell(`B${i + 2}`).style("fill", "01ff00");
           regionString = `${currentRegion}~`;
         }
         if (PWlessList.indexOf(currentRegion) === -1) {
