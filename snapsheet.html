@@ -1,38 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Snapsheet</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-  </head>
-  <body>
-    <div class="container-sm pr-5">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Analog_Clock.css">
+    <link rel="stylesheet" href="assets/css/Clock-Real-Time-1.css">
+    <link rel="stylesheet" href="assets/css/Clock-Real-Time.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container"><a class="navbar-brand" href="index.html">WebTrigger</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Snapsheet</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="quickdraw.html">Quickdraw</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://github.com/AavHRF/webtrigger/issues/1">Report Generator</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><div class="container-sm pr-5">
       <h1 class="pt-4 pb-4">Snapsheet</h1>
       <form onsubmit="return false" class="pr-5">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text">Nation</span>
           </div>
-          <input id="nationName" type="text" class="form-control" placeholder="Your nation name" />
+          <input id="nationName" type="text" class="form-control" placeholder="Your nation name">
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text">Minor Time</span>
           </div>
-          <input id="minorLength" type="number" class="form-control" placeholder="Length of minor update (seconds)" />
+          <input id="minorLength" type="number" class="form-control" placeholder="Length of minor update (seconds)">
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text">Major Time</span>
           </div>
-          <input id="majorLength" type="number" class="form-control" placeholder="Length of major update (seconds)" />
+          <input id="majorLength" type="number" class="form-control" placeholder="Length of major update (seconds)">
         </div>
         <div class="custom-control custom-switch mb-3">
-          <input id="genEmbassies" type="checkbox" class="custom-control-input" />
+          <input id="genEmbassies" type="checkbox" class="custom-control-input">
           <label class="custom-control-label" for="genEmbassies">Include region embassies?</label>
         </div>
       </form>
-      <button type="submit" class="btn btn-primary"><i class='fas fa-magic'></i> Generate Sheet</button>
+      <button type="submit" class="btn btn-primary"><i class="fas fa-magic"></i> Generate Sheet</button>
       <button type="reset" class="btn btn-danger"><i class="fas fa-trash"></i> Clear Fields</button>
       <div class="progress mt-3 mb-3" style="height:30px">
         <div class="progress-bar" style="width:0%;height:30px"></div>
@@ -43,8 +72,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="xlsx-populate-no-encryption.min.js"></script>
     <script src="snapsheet.js"></script>
-  </body>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Analog_Clock.js"></script>
+    <script src="assets/js/Clock-Real-Time.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
 </html>
