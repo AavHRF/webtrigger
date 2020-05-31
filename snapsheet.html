@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Snapsheet</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container-sm pr-5">
+      <h1 class="pt-4 pb-4">Snapsheet</h1>
+      <form onsubmit="return false" class="pr-5">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Nation</span>
+          </div>
+          <input id="nationName" type="text" class="form-control" placeholder="Your nation name" />
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Minor Time</span>
+          </div>
+          <input id="minorLength" type="number" class="form-control" placeholder="Length of minor update" />
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Major Time</span>
+          </div>
+          <input id="majorLength" type="number" class="form-control" placeholder="Length of major update" />
+        </div>
+        <div class="custom-control custom-switch mb-3">
+          <input id="genEmbassies" type="checkbox" class="custom-control-input" />
+          <label class="custom-control-label" for="genEmbassies">Include region embassies?</label>
+        </div>
+      </form>
+      <button type="submit" class="btn btn-primary"><i class='fas fa-magic'></i> Generate Sheet</button>
+      <button type="reset" class="btn btn-danger"><i class="fas fa-trash"></i> Clear Fields</button>
+      <div class="progress mt-3 mb-3" style="height:30px">
+        <div class="progress-bar" style="width:0%;height:30px"></div>
+      </div>
+      <div id="notifBox" class="pr-5">
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="xlsx-populate-no-encryption.min.js"></script>
+    <script src="snapsheet.js"></script>
+  </body>
+</html>
