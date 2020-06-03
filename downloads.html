@@ -33,43 +33,53 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="snapsheet.html">Snapsheet</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="quickdraw.html">Quickdraw</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Changelog</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Downloads</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container">
-        <div role="tablist" id="accordion-1">
-            <div class="card">
-                <div class="card-header" role="tab">
-                    <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="true" aria-controls="accordion-1 .item-1" href="#accordion-1 .item-1">Version 0.3.0</a></h5>
-                </div>
-                <div class="collapse show item-1" role="tabpanel" data-parent="#accordion-1">
-                    <div class="card-body">
-                        <p class="card-text">Updated some page links. Added downloads page. Added report generator. General performance updates.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" role="tab">
-                    <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-2" href="#accordion-1 .item-2">Version 0.2.0</a></h5>
-                </div>
-                <div class="collapse item-2" role="tabpanel" data-parent="#accordion-1">
-                    <div class="card-body">
-                        <p class="card-text">Added quickdraw and Snapsheet pages. Updated links so that they weren't all broken. Most stuff works now. Irrelevant links removed, for now. General cleaning and other housekeeping tasks handled.<br></p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" role="tab">
-                    <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-3" href="#accordion-1 .item-3">Version 0.0.1</a></h5>
-                </div>
-                <div class="collapse item-3" role="tabpanel" data-parent="#accordion-1">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Additions:</strong><br><br>Main structure completed</p>
-                    </div>
-                </div>
-            </div>
+        <div class="jumbotron">
+            <h1>WebTrigger Downloads</h1>
+            <p>Downloads are available here for certain tools, like the report generator. Frontend downloads are also available as a .zip or a .tar.gz.</p>
+        </div>
+        <div class="alert alert-info" role="alert"><span><strong>Report Generator</strong></span></div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Compiled</th>
+                        <th>Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Report Generator 1.0.0</td>
+                        <td><a class="btn btn-primary" role="button" download="https://github.com/AavHRF/webtrigger/releases/download/1.0.0/report_generator.exe">Download</a></td>
+                        <td><a class="btn btn-danger" role="button" download="https://github.com/AavHRF/webtrigger/releases/download/1.0.0/main.cpp">Download</a>&nbsp;<br>Warning: if you don't know what you're doing, you should download the compiled version.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="alert alert-info" role="alert"><span><strong>Frontend</strong><br></span></div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Zip</th>
+                        <th>tar.gz</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Frontend 0.3.0</td>
+                        <td><button class="btn btn-primary" type="button" download="https://github.com/AavHRF/webtrigger/archive/1.0.0.zip">Download</button></td>
+                        <td><button class="btn btn-primary" type="button" download="https://github.com/AavHRF/webtrigger/archive/1.0.0.tar.gz">Download</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
